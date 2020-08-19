@@ -1,0 +1,230 @@
+html {
+/* width: 100vw; */
+
+}
+
+body {
+height: 100vh;
+width: 100vw;
+    overflow: hidden;
+    animation: fadein 2s both;
+}
+
+@keyframes fadein {
+    from{opacity: 0; background-color: white;}
+    to{opacity: 1; background-color: black;}
+}
+
+#grid {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 90vw;
+    height: 90vw;
+    max-width: 55vh;
+    max-height: 55vh; 
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.cell {
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+}
+
+.cellfill {
+    background-color: rgb(4, 131, 0)!important;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -5px rgba(48, 207, 0, 0.815);
+    position: relative;
+    z-index: 10;
+    
+
+
+}
+
+.apple {
+    background-size: cover;
+    animation: apple .5s infinite;
+    border-radius: 50%;
+    position: relative;
+    z-index: 20;
+    
+}
+
+@keyframes apple {
+    0% {background-color: #E32636; box-shadow: 0px 0px 50px 0px #E32636;}
+    20% {background-color: #E52B50;box-shadow: 0px 0px 50px 0px #E52B50}
+    40% {background-color: #FF0800;box-shadow: 0px 0px 50px 0px #FF0800;}
+    60% {background-color: #DC143C;box-shadow: 0px 0px 50px 0px #DC143C;}
+    80% {background-color: #E34234;box-shadow: 0px 0px 50px 0px #E34234;}
+    100% {background-color: #FF004F;box-shadow: 0px 0px 50px 0px #FF004F;}                                        
+}
+
+@keyframes death {
+    0% {color: #E32636; text-shadow: 0px 0px 50px #E32636;}
+    20% {color: #E52B50;text-shadow: 0px 0px 50px #E52B50;}
+    40% {color: #FF0800;text-shadow: 0px 0px 50px #FF0800;}
+    60% {color: #DC143C;text-shadow: 0px 0px 50px #DC143C;}
+    80% {color: #E34234;text-shadow: 0px 0px 50px #E34234;}
+    100% {color: #FF004F;text-shadow: 0px 0px 50px #FF004F;}                                        
+}
+
+
+
+.score {
+    position: relative;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 200;
+    font-size: 27px;
+    margin-top: 0px;
+    z-index: 300;
+
+}
+
+p {
+    color: white;
+    position: absolute;
+    /* left: 520px; */
+    top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.snakehead {
+    background-color: #048300!important;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -5px rgba(48, 207, 0, 0.815);
+    position: relative;
+    z-index: 10;
+}
+
+#deathScreen {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(80, 42, 42, 0.39);
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    backdrop-filter: blur(3px);
+}
+
+#youDied {
+    animation: death .5s infinite;
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    font-size: 55px;
+    top: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+#deathScore {
+    color: white;
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    font-size: 27px;
+    top: 285px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#deathScreen button {
+    position: absolute;
+    left: 50vw;
+    transform: translate(-50%);
+    background-color: rgb(4, 131, 0);
+    height: 50px;
+    width: 100px;
+    border: none;
+    top: 360px;
+    color: rgb(188, 253, 158);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.arrowContainer {
+position: absolute;
+height: 30vh;
+width: 30vh;
+left: 50%;
+top:  99%;
+transform: translate(-50%, -100%);
+/* background-color: red; */
+/* min-width: 226px; */
+}
+
+.arrow {
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 10px;
+    background-color: rgb(46, 46, 46);
+    z-index: 100;
+}
+
+.arrow:active {
+    animation: apple .5s infinite;
+}
+
+.arrowActive {
+    animation: apple .5s infinite;
+    
+}
+
+.up {
+left: 50%;
+transform: translate(-50%);
+}
+.right {
+left: 100%;
+top: 50%;
+transform: translate(-100%, -50%);
+}
+.down {
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -100%);
+}
+.left {
+    left: 0%;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#gameDiv {
+position: absolute;
+height: 63vh;
+width: 100vw;
+left: 0px;
+}
+
+#controllDiv {
+    left: 0px;
+    position: absolute;
+    height: 30vh;
+    width: 100vw;
+    top: 63%;
+    /* transform: translate(-0%, -100%); */
+}
+
+#scoreDiv {
+    height: 7vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 300px;
+    left: 20px;
+    top: 100vh;
+    transform: translate(0%, -100%);
+    /* padding: 10px; */
+}
